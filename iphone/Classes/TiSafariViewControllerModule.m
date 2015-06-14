@@ -53,8 +53,11 @@
 
 -(void)teardown
 {
-    _sfVC.delegate = nil;
-    _sfVC = nil;
+    if(_sfVC!=nil)
+    {
+        _sfVC.delegate = nil;
+        _sfVC = nil;
+    }
     _isOpen = NO;
     if ([self _hasListeners:@"closed"])
     {
@@ -89,15 +92,23 @@
     return NUMBOOL((NSClassFromString(@"SFSafariViewController") !=nil ));
 }
 
--(void)close:(id)args
+-(void)close:(id)unused
 {
-    if(_isOpen){
+    ENSURE_UI_THREAD(close,unused);
+    
+    if(_sfVC!=nil)
+    {
+        [[TiApp app] hideModalController:_sfVC animated:YES];
         [self teardown];
     }
+    _isOpen = NO;
 }
 
 -(void)open:(id)args
 {
+    ENSURE_SINGLE_ARG(args,NSDictionary);
+    ENSURE_UI_THREAD(open,args);
+    
     NSString *url = [TiUtils stringValue:@"url" properties:args];
     BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
     BOOL entersReaderIfAvailable = [TiUtils boolValue:@"entersReaderIfAvailable" properties:args def:YES];
