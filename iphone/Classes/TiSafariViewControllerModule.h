@@ -6,7 +6,7 @@
  */
 
 #import "TiModule.h"
-#import <SafariServices/SFSafariViewController.h>
+#import <SafariServices/SafariServices.h>
 
 @interface TiSafariViewControllerModule : TiModule<SFSafariViewControllerDelegate>
 {

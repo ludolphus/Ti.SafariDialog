@@ -75,10 +75,9 @@
 
 -(SFSafariViewController*)sfController:(NSString*)url withEntersReaderIfAvailable:(BOOL)entersReaderIfAvailable
 {
-    if(_sfVC = nil)
+    if(_sfVC == nil)
     {
-        _sfVC =[SFSafariViewController initWithURL:[NSURL URLWithString:url]
-                           entersReaderIfAvailable:entersReaderIfAvailable];
+        _sfVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] entersReaderIfAvailable:entersReaderIfAvailable];
         _sfVC.delegate = self;
     }
     
@@ -109,12 +108,25 @@
     ENSURE_SINGLE_ARG(args,NSDictionary);
     ENSURE_UI_THREAD(open,args);
     
+    if(NSClassFromString(@"SFSafariViewController") ==nil )
+    {
+        NSLog(@"[ERROR] SFSafariViewController not supported");
+        return;
+    }
+    
     NSString *url = [TiUtils stringValue:@"url" properties:args];
     BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
     BOOL entersReaderIfAvailable = [TiUtils boolValue:@"entersReaderIfAvailable" properties:args def:YES];
+
+    SFSafariViewController* safari = [self sfController:url withEntersReaderIfAvailable:entersReaderIfAvailable];
     
-    [[TiApp app] showModalController:[self sfController:url withEntersReaderIfAvailable:entersReaderIfAvailable]
-                            animated:animated];
+    if([args objectForKey:@"title"])
+    {
+        safari.title = [TiUtils stringValue:@"title" properties:args];
+    }
+        
+    [[TiApp app] showModalController:safari animated:animated];
+    
     _isOpen = YES;
     
     if ([self _hasListeners:@"opened"])
