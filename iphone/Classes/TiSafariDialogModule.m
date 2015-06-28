@@ -1,30 +1,30 @@
 /**
- * Ti.SafariViewController
+ * Ti.SafariDialog
  *
  * Created by Ben Bahrenburg (bencoding)
  * Copyright (c) 2015 Ben Bahrenburg (bencoding). All rights reserved.
  */
 
-#import "TiSafariViewControllerModule.h"
+#import "TiSafariDialogModule.h"
 #import "TiBase.h"
 #import "TiHost.h"
 #import "TiUtils.h"
 #import "TiApp.h"
 
-@implementation TiSafariViewControllerModule
+@implementation TiSafariDialogModule
 
 #pragma mark Internal
 
 // this is generated for your module, please do not change it
 -(id)moduleGUID
 {
-	return @"cdb36e6b-25e2-4da2-b703-d4f1416e7c5e";
+	return @"c2b0df2f-43e2-4811-aa9e-c0a91c158d33";
 }
 
 // this is generated for your module, please do not change it
 -(NSString*)moduleId
 {
-	return @"Ti.SafariViewController";
+	return @"Ti.SafariDialog";
 }
 
 #pragma mark Lifecycle
@@ -32,12 +32,12 @@
 -(void)startup
 {
     _isOpen = NO;
-	[super startup];
+    [super startup];
 }
 
 -(void)shutdown:(id)sender
 {
-	[super shutdown:sender];
+    [super shutdown:sender];
 }
 
 #pragma mark Cleanup
@@ -47,9 +47,15 @@
 
 -(void)didReceiveMemoryWarning:(NSNotification*)notification
 {
-	[super didReceiveMemoryWarning:notification];
+    [super didReceiveMemoryWarning:notification];
 }
 
+#pragma mark internal methods
+
+-(BOOL)checkSupported
+{
+    return (NSClassFromString(@"SFSafariViewController") != nil);
+}
 
 -(void)teardown
 {
@@ -66,7 +72,6 @@
     }
 }
 
-#pragma mark Listener Notifications
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
 {
     [[TiApp app] hideModalController:controller animated:YES];
@@ -86,9 +91,14 @@
 
 #pragma Public APIs
 
+-(id)supported
+{
+    return NUMBOOL([self checkSupported]);
+}
+
 -(NSNumber*)isSupported:(id)unused
 {
-    return NUMBOOL((NSClassFromString(@"SFSafariViewController") !=nil ));
+    return NUMBOOL([self checkSupported]);
 }
 
 -(void)close:(id)unused
@@ -108,23 +118,29 @@
     ENSURE_SINGLE_ARG(args,NSDictionary);
     ENSURE_UI_THREAD(open,args);
     
-    if(NSClassFromString(@"SFSafariViewController") ==nil )
+    if(![self checkSupported])
     {
         NSLog(@"[ERROR] SFSafariViewController not supported");
+        return;
+    }
+    
+    if(![args objectForKey:@"url"])
+    {
+        NSLog(@"[ERROR] url is required");
         return;
     }
     
     NSString *url = [TiUtils stringValue:@"url" properties:args];
     BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
     BOOL entersReaderIfAvailable = [TiUtils boolValue:@"entersReaderIfAvailable" properties:args def:YES];
-
+    
     SFSafariViewController* safari = [self sfController:url withEntersReaderIfAvailable:entersReaderIfAvailable];
     
     if([args objectForKey:@"title"])
     {
         safari.title = [TiUtils stringValue:@"title" properties:args];
     }
-        
+    
     [[TiApp app] showModalController:safari animated:animated];
     
     _isOpen = YES;

@@ -1,14 +1,14 @@
 /**
- * Ti.SafariViewController
+ * Ti.SafariDialog
  *
  * Created by Ben Bahrenburg (bencoding)
  * Copyright (c) 2015 Ben Bahrenburg (bencoding). All rights reserved.
  */
-#import "TiSafariViewControllerModuleAssets.h"
+#import "TiSafariDialogModuleAssets.h"
 
 extern NSData* filterDataInRange(NSData* thedata, NSRange range);
 
-@implementation TiSafariViewControllerModuleAssets
+@implementation TiSafariDialogModuleAssets
 
 - (NSData*) moduleAsset
 {

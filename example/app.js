@@ -13,16 +13,16 @@ win.add(label);
 win.open();
 
 // TODO: write your module tests here
-var tisafariviewcontroller = require('Ti.SafariViewController');
-Ti.API.info("module is => " + tisafariviewcontroller);
+var tisafaridialog = require('Ti.SafariDialog');
+Ti.API.info("module is => " + tisafaridialog);
 
-label.text = tisafariviewcontroller.example();
+label.text = tisafaridialog.example();
 
-Ti.API.info("module exampleProp is => " + tisafariviewcontroller.exampleProp);
-tisafariviewcontroller.exampleProp = "This is a test value";
+Ti.API.info("module exampleProp is => " + tisafaridialog.exampleProp);
+tisafaridialog.exampleProp = "This is a test value";
 
 if (Ti.Platform.name == "android") {
-	var proxy = tisafariviewcontroller.createExample({
+	var proxy = tisafaridialog.createExample({
 		message: "Creating an example Proxy",
 		backgroundColor: "red",
 		width: 100,
