@@ -1,39 +1,31 @@
-// This is a test harness for your module
-// You should do something interesting in this harness
-// to test out the module and to provide instructions
-// to users on how to use it by example.
 
+var safariDialog = require('Ti.SafariDialog');
+Ti.API.info("module is => " + safariDialog);
 
-// open a single window
-var win = Ti.UI.createWindow({
-	backgroundColor:'white'
+var win = Titanium.UI.createWindow({  
+    title:'Demo', backgroundColor:'#fff',layout:'vertical'
 });
-var label = Ti.UI.createLabel();
-win.add(label);
-win.open();
 
-// TODO: write your module tests here
-var tisafaridialog = require('Ti.SafariDialog');
-Ti.API.info("module is => " + tisafaridialog);
+var btnOpenDialog = Ti.UI.createButton({
+	top:20, title:'Open Safari Dialog',
+	height:60, width:Ti.UI.FILL
+});
+win.add(btnOpenDialog);
 
-label.text = tisafaridialog.example();
-
-Ti.API.info("module exampleProp is => " + tisafaridialog.exampleProp);
-tisafaridialog.exampleProp = "This is a test value";
-
-if (Ti.Platform.name == "android") {
-	var proxy = tisafaridialog.createExample({
-		message: "Creating an example Proxy",
-		backgroundColor: "red",
-		width: 100,
-		height: 100,
-		top: 100,
-		left: 150
+btnOpenDialog.addEventListener('click',function(d){
+	safariDialog.open({
+		url:"http://appcelerator.com",
+		title:"Hello World",
+		tintColor:"red"
 	});
+});
 
-	proxy.printMessage("Hello world!");
-	proxy.message = "Hi world!.  It's me again.";
-	proxy.printMessage("Hello world!");
-	win.add(proxy);
-}
+safariDialog.addEventListener("opened",function(e){
+	console.log("opened: " + JSON.stringify(e));
+});
 
+safariDialog.addEventListener("closed",function(e){
+	console.log("closed: " + JSON.stringify(e));
+});
+
+win.open();

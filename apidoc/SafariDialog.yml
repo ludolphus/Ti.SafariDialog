@@ -1,0 +1,126 @@
+name: Modules.SafariDialog
+summary: Allows a Titanium application to use the iOS Safari ViewController to create an embedded browser.
+platforms: [iphone, ipad]
+since: "4.4.0"
+extends: Titanium.Module
+description: |
+    
+    The SafariDialog module provides Titanium access to the native SFSafariViewController. This enables you to 
+    deliver interactive web content in your app just like Safari, including the key Safari UI elements already 
+    familiar to your users. See how to easily bring Safari features like Reader and AutoFill into your app.
+
+    ### Requirements
+
+    The SafariDialog module is available with the Titanium SDK starting with Release 4.4.0.
+    This module only works with devices running iOS 9. 
+
+
+    ### Getting Started
+
+    Add the module as a dependency to your application by adding a **`<module>`** item to the
+    **`<modules>`** element of your `tiapp.xml` file:
+
+        <ti:app>
+          ...
+          <modules>
+            <module platform="iphone">ti.safaridialog</module>
+          </modules>
+          ...
+        </ti:app>
+
+    Use `require()` to access the module from JavaScript:
+
+        var dialog = require("ti.safaridialog");
+
+    The `dialog` variable is a reference to the module. Make API calls using this reference:
+
+       if(dialog.isSupported()){
+          dialog.open({
+              url:"http://appcelerator.com",
+              title:"Hello World",
+              tintColor:"red"
+          });
+       }
+
+    ### Sample Application
+
+    The module contains a sample application in the
+    `<TITANIUM_SDK_HOME>/modules/iphone/ti.safaridialog/<VERSION>/example/` folder.
+properties:
+  - name: supported
+    summary: Indicates if SafariDialog is supported.
+    type: Boolean
+    osver: {ios: {min: "9.0"}}
+    platforms: [iphone,ipad]
+  - name: opened
+    summary: Indicates is SafariDialog is open.
+    type: Boolean
+    osver: {ios: {min: "9.0"}}
+    platforms: [iphone,ipad] 
+
+methods:
+  - name: isOpen
+    summary: Indicates if SafariDialog is open.
+    osver: {ios: {min: "9.0"}}
+    platforms: [iphone,ipad]    
+    returns:
+        type: Boolean
+
+  - name: isSupported
+    summary: Indicates if SafariDialog is supported.
+    osver: {ios: {min: "9.0"}}
+    platforms: [iphone,ipad]    
+    returns:
+        type: Boolean
+
+  - name: open
+    summary: Opens the SafariDialog with the options provided.
+    description: |
+      var dialog = require("ti.safaridialog");
+       if(dialog.isSupported()){
+          dialog.open({
+              url:"http://appcelerator.com",
+              title:"Hello World",
+              tintColor:"red"
+          });
+       }
+    osver: {ios: {min: "9.0"}}
+    platforms: [iphone,ipad]    
+    parameters:
+      - name: params
+        summary: |
+            Dictionary containing three properties:
+
+              * `url` (String): Required field.  The URL to be opened in the SafariDialog. 
+              * `title` (String): Optional field.  Sets the title of the page displayed. 
+              * `tintColor` (String): Optional field.  The tintColor applied to SafariDialog.
+
+        type: Dictionary
+
+  - name: close
+    summary: Programmatically closes the SafariDialog.
+    description: |
+      var dialog = require("ti.safaridialog");
+       if(dialog.isOpen()){
+          dialog.close();
+       }
+    osver: {ios: {min: "9.0"}}
+    platforms: [iphone,ipad]
+events:
+  - name: opened
+    summary: |
+      The opened event is fired after the SafariDialog has opened.
+    properties:
+      - name: url
+        summary: The URL provided when opening the SafariDialog
+        type: String
+        platforms: [iphone, ipad]
+  - name: closed
+    summary: |
+      The closed event is fired when the SafariDialog is closed by the user or programmatically.
+    properties:
+      - name: url
+        summary: The URL provided when opening the SafariDialog
+        type: String
+        platforms: [iphone, ipad]
+               

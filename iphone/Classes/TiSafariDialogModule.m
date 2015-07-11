@@ -1,8 +1,9 @@
 /**
  * Ti.SafariDialog
  *
- * Created by Ben Bahrenburg (bencoding)
- * Copyright (c) 2015 Ben Bahrenburg (bencoding). All rights reserved.
+ * Copyright (c) 2009-2015 by Appcelerator, Inc. All Rights Reserved.
+ * Licensed under the terms of the Apache Public License
+ * Please see the LICENSE included with this distribution for details.
  */
 
 #import "TiSafariDialogModule.h"
@@ -59,15 +60,19 @@
 
 -(void)teardown
 {
-    if(_sfVC!=nil)
-    {
-        _sfVC.delegate = nil;
-        _sfVC = nil;
+    if(_sfController!=nil){
+        _sfController.delegate = nil;
+        _sfController = nil;
     }
+    
     _isOpen = NO;
-    if ([self _hasListeners:@"closed"])
-    {
-        NSDictionary *event = [NSDictionary dictionaryWithObject:NUMINT(YES) forKey:@"success"];
+    
+    if ([self _hasListeners:@"closed"]){
+        NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
+                               NUMINT(YES),@"success",
+                               _url,@"url",
+                               nil
+                               ];
         [self fireEvent:@"closed" withObject:event];
     }
 }
@@ -80,16 +85,25 @@
 
 -(SFSafariViewController*)sfController:(NSString*)url withEntersReaderIfAvailable:(BOOL)entersReaderIfAvailable
 {
-    if(_sfVC == nil)
-    {
-        _sfVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] entersReaderIfAvailable:entersReaderIfAvailable];
-        _sfVC.delegate = self;
+    if(_sfController == nil){
+        _sfController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] entersReaderIfAvailable:entersReaderIfAvailable];
+        _sfController.delegate = self;
     }
     
-    return _sfVC;
+    return _sfController;
 }
 
 #pragma Public APIs
+
+-(id)opened
+{
+    return NUMBOOL(_isOpen);
+}
+
+-(NSNumber*)isOpen:(id)unused
+{
+    return NUMBOOL(_isOpen);
+}
 
 -(id)supported
 {
@@ -105,9 +119,8 @@
 {
     ENSURE_UI_THREAD(close,unused);
     
-    if(_sfVC!=nil)
-    {
-        [[TiApp app] hideModalController:_sfVC animated:YES];
+    if(_sfController != nil){
+        [[TiApp app] hideModalController:_sfController animated:YES];
         [self teardown];
     }
     _isOpen = NO;
@@ -118,39 +131,39 @@
     ENSURE_SINGLE_ARG(args,NSDictionary);
     ENSURE_UI_THREAD(open,args);
     
-    if(![self checkSupported])
-    {
-        NSLog(@"[ERROR] SFSafariViewController not supported");
-        return;
-    }
-    
-    if(![args objectForKey:@"url"])
-    {
+    if(![args objectForKey:@"url"]){
         NSLog(@"[ERROR] url is required");
         return;
     }
     
-    NSString *url = [TiUtils stringValue:@"url" properties:args];
+    _url = [TiUtils stringValue:@"url" properties:args];
     BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
     BOOL entersReaderIfAvailable = [TiUtils boolValue:@"entersReaderIfAvailable" properties:args def:YES];
     
-    SFSafariViewController* safari = [self sfController:url withEntersReaderIfAvailable:entersReaderIfAvailable];
+    SFSafariViewController* safari = [self sfController:_url withEntersReaderIfAvailable:entersReaderIfAvailable];
     
-    if([args objectForKey:@"title"])
-    {
+    if([args objectForKey:@"title"]){
         safari.title = [TiUtils stringValue:@"title" properties:args];
+    }
+
+    if([args objectForKey:@"tintColor"]){
+        TiColor *newColor = [TiUtils colorValue:@"tintColor" properties:args];
+        UIColor *clr = [newColor _color];
+        safari.view.tintColor = clr;
     }
     
     [[TiApp app] showModalController:safari animated:animated];
     
     _isOpen = YES;
     
-    if ([self _hasListeners:@"opened"])
-    {
-        NSDictionary *event = [NSDictionary dictionaryWithObject:NUMINT(YES) forKey:@"success"];
+    if ([self _hasListeners:@"opened"]){
+        NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
+                               NUMINT(YES),@"success",
+                               _url,@"url",
+                               nil
+                               ];
         [self fireEvent:@"opened" withObject:event];
     }
-    
 }
 
 @end
