@@ -89,9 +89,10 @@ methods:
     parameters:
       - name: params
         summary: |
-            Dictionary containing three properties:
+            Dictionary containing the following properties:
 
               * `url` (String): Required field.  The URL to be opened in the SafariDialog. 
+              * `entersReaderIfAvailable` (Boolean): Optional field.  Indicates if the Safari Reader version of content should be shown automatically.
               * `title` (String): Optional field.  Sets the title of the page displayed. 
               * `tintColor` (String): Optional field.  The tintColor applied to SafariDialog.
 
