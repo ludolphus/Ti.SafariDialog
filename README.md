@@ -12,7 +12,7 @@ Documentation can be found [here](apidoc/SafariDialog.yml)
 
 ## Contributors
 
-* Contributors are listed [here](https://github.com/benbahrenburg/Ti.SafariDialog/graphs/contributors)
+* Contributors are listed [here](https://github.com/appcelerator-modules/Ti.SafariDialog/graphs/contributors)
 * Interested in contributing? Read the [contributors/committer's](https://wiki.appcelerator.org/display/community/Home) guide.
 
 
