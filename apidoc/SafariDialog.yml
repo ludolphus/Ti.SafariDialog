@@ -108,17 +108,17 @@ methods:
     osver: {ios: {min: "9.0"}}
     platforms: [iphone,ipad]
 events:
-  - name: opened
+  - name: open
     summary: |
-      The opened event is fired after the SafariDialog has opened.
+      The open event is fired after the SafariDialog has opened.
     properties:
       - name: url
         summary: The URL provided when opening the SafariDialog
         type: String
         platforms: [iphone, ipad]
-  - name: closed
+  - name: close
     summary: |
-      The closed event is fired when the SafariDialog is closed by the user or programmatically.
+      The close event is fired when the SafariDialog is closed by the user or programmatically.
     properties:
       - name: url
         summary: The URL provided when opening the SafariDialog

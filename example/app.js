@@ -20,12 +20,12 @@ btnOpenDialog.addEventListener('click',function(d){
 	});
 });
 
-safariDialog.addEventListener("opened",function(e){
-	console.log("opened: " + JSON.stringify(e));
+safariDialog.addEventListener("open",function(e){
+	console.log("open: " + JSON.stringify(e));
 });
 
-safariDialog.addEventListener("closed",function(e){
-	console.log("closed: " + JSON.stringify(e));
+safariDialog.addEventListener("close",function(e){
+	console.log("close: " + JSON.stringify(e));
 });
 
 win.open();

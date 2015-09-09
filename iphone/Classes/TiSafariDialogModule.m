@@ -67,13 +67,13 @@
     
     _isOpen = NO;
     
-    if ([self _hasListeners:@"closed"]){
+    if ([self _hasListeners:@"close"]){
         NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                                NUMINT(YES),@"success",
                                _url,@"url",
                                nil
                                ];
-        [self fireEvent:@"closed" withObject:event];
+        [self fireEvent:@"close" withObject:event];
     }
 }
 
@@ -156,13 +156,13 @@
     
     _isOpen = YES;
     
-    if ([self _hasListeners:@"opened"]){
+    if ([self _hasListeners:@"open"]){
         NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                                NUMINT(YES),@"success",
                                _url,@"url",
                                nil
                                ];
-        [self fireEvent:@"opened" withObject:event];
+        [self fireEvent:@"open" withObject:event];
     }
 }
 
