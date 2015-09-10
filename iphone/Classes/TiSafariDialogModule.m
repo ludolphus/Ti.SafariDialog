@@ -25,7 +25,7 @@
 // this is generated for your module, please do not change it
 -(NSString*)moduleId
 {
-	return @"Ti.SafariDialog";
+	return @"ti.safaridialog";
 }
 
 #pragma mark Lifecycle

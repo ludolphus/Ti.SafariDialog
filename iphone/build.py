@@ -69,9 +69,7 @@ def generate_doc(config):
 	return documentation
 
 def compile_js(manifest,config):
-	js_file = os.path.join(cwd,'assets','Ti.SafariDialog.js')
-	if not os.path.exists(js_file):
-		js_file = os.path.join(cwd,'..','assets','Ti.SafariDialog.js')
+	js_file = os.path.join(cwd,'assets','ti.safaridialog.js')
 	if not os.path.exists(js_file): return
 
 	from compiler import Compiler

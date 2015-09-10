@@ -12,7 +12,7 @@ copyright: Copyright (c) 2014 by Appcelerator, Inc.
 
 # these should not be edited
 name: TiSafariDialog
-moduleid: Ti.SafariDialog
+moduleid: ti.safaridialog
 guid: c2b0df2f-43e2-4811-aa9e-c0a91c158d33
 platform: iphone
 minsdk: 4.0.0.GA

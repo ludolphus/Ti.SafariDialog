@@ -1,5 +1,5 @@
 
-var safariDialog = require('Ti.SafariDialog');
+var safariDialog = require('ti.safaridialog');
 Ti.API.info("module is => " + safariDialog);
 
 var win = Titanium.UI.createWindow({  
