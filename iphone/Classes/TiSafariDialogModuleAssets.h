@@ -6,7 +6,7 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
-@interface TiSafariDialogModuleAssets : NSObject
+@interface TiSafaridialogModuleAssets : NSObject
 {
 }
 - (NSData*) moduleAsset;

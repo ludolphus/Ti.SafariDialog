@@ -22,13 +22,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		24DD6CF91134B3F500162E58 /* TiSafariDialogModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* TiSafariDialogModule.h */; };
-		24DD6CFA1134B3F500162E58 /* TiSafariDialogModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiSafariDialogModule.m */; };
-		24DE9E1111C5FE74003F90F6 /* TiSafariDialogModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiSafariDialogModuleAssets.h */; };
-		24DE9E1211C5FE74003F90F6 /* TiSafariDialogModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiSafariDialogModuleAssets.m */; };
-		AA747D9F0F9514B9006C5449 /* TiSafariDialog_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiSafariDialog_Prefix.pch */; };
+		24DD6CF91134B3F500162E58 /* TiSafaridialogModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* TiSafaridialogModule.h */; };
+		24DD6CFA1134B3F500162E58 /* TiSafaridialogModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiSafaridialogModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* TiSafaridialogModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiSafaridialogModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* TiSafaridialogModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiSafaridialogModuleAssets.m */; };
+		AA747D9F0F9514B9006C5449 /* TiSafaridialog_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiSafaridialog_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		CA3B60921B3FC31F003D50D5 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3B60911B3FC31F003D50D5 /* SafariServices.framework */; };
+		CAEDC01F1BA2963700D83952 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDC01E1BA2963700D83952 /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,15 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24DD6CF71134B3F500162E58 /* TiSafariDialogModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiSafariDialogModule.h; path = Classes/TiSafariDialogModule.h; sourceTree = "<group>"; };
-		24DD6CF81134B3F500162E58 /* TiSafariDialogModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiSafariDialogModule.m; path = Classes/TiSafariDialogModule.m; sourceTree = "<group>"; };
+		24DD6CF71134B3F500162E58 /* TiSafaridialogModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiSafaridialogModule.h; path = Classes/TiSafaridialogModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* TiSafaridialogModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiSafaridialogModule.m; path = Classes/TiSafaridialogModule.m; sourceTree = "<group>"; };
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
-		24DE9E0F11C5FE74003F90F6 /* TiSafariDialogModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiSafariDialogModuleAssets.h; path = Classes/TiSafariDialogModuleAssets.h; sourceTree = "<group>"; };
-		24DE9E1011C5FE74003F90F6 /* TiSafariDialogModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiSafariDialogModuleAssets.m; path = Classes/TiSafariDialogModuleAssets.m; sourceTree = "<group>"; };
-		AA747D9E0F9514B9006C5449 /* TiSafariDialog_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiSafariDialog_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		24DE9E0F11C5FE74003F90F6 /* TiSafaridialogModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiSafaridialogModuleAssets.h; path = Classes/TiSafaridialogModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* TiSafaridialogModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiSafaridialogModuleAssets.m; path = Classes/TiSafaridialogModuleAssets.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* TiSafaridialog_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiSafaridialog_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CA3B60911B3FC31F003D50D5 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		D2AAC07E0554694100DB518D /* libTiSafariDialog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiSafariDialog.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAEDC01E1BA2963700D83952 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libTiSafaridialog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiSafaridialog.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA3B60921B3FC31F003D50D5 /* SafariServices.framework in Frameworks */,
+				CAEDC01F1BA2963700D83952 /* SafariServices.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +69,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC07E0554694100DB518D /* libTiSafariDialog.a */,
+				D2AAC07E0554694100DB518D /* libTiSafaridialog.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,7 +88,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CA3B60911B3FC31F003D50D5 /* SafariServices.framework */,
+				CAEDC01E1BA2963700D83952 /* SafariServices.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -97,10 +97,10 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				24DE9E0F11C5FE74003F90F6 /* TiSafariDialogModuleAssets.h */,
-				24DE9E1011C5FE74003F90F6 /* TiSafariDialogModuleAssets.m */,
-				24DD6CF71134B3F500162E58 /* TiSafariDialogModule.h */,
-				24DD6CF81134B3F500162E58 /* TiSafariDialogModule.m */,
+				24DE9E0F11C5FE74003F90F6 /* TiSafaridialogModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* TiSafaridialogModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* TiSafaridialogModule.h */,
+				24DD6CF81134B3F500162E58 /* TiSafaridialogModule.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA747D9E0F9514B9006C5449 /* TiSafariDialog_Prefix.pch */,
+				AA747D9E0F9514B9006C5449 /* TiSafaridialog_Prefix.pch */,
 				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
 			);
 			name = "Other Sources";
@@ -121,9 +121,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA747D9F0F9514B9006C5449 /* TiSafariDialog_Prefix.pch in Headers */,
-				24DD6CF91134B3F500162E58 /* TiSafariDialogModule.h in Headers */,
-				24DE9E1111C5FE74003F90F6 /* TiSafariDialogModuleAssets.h in Headers */,
+				AA747D9F0F9514B9006C5449 /* TiSafaridialog_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* TiSafaridialogModule.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* TiSafaridialogModuleAssets.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +144,7 @@
 			);
 			name = TiSafariDialog;
 			productName = TiSafariDialog;
-			productReference = D2AAC07E0554694100DB518D /* libTiSafariDialog.a */;
+			productReference = D2AAC07E0554694100DB518D /* libTiSafaridialog.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +153,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TiSafariDialog" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -197,8 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24DD6CFA1134B3F500162E58 /* TiSafariDialogModule.m in Sources */,
-				24DE9E1211C5FE74003F90F6 /* TiSafariDialogModuleAssets.m in Sources */,
+				24DD6CFA1134B3F500162E58 /* TiSafaridialogModule.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* TiSafaridialogModuleAssets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,14 +217,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DSTROOT = /tmp/TiSafariDialog.dst;
+				DSTROOT = /tmp/TiSafaridialog.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TiSafariDialog_Prefix.pch;
+				GCC_PREFIX_HEADER = TiSafaridialog_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -244,7 +243,7 @@
 					"-DTI_POST_1_2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = TiSafariDialog;
+				PRODUCT_NAME = TiSafaridialog;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
@@ -258,12 +257,11 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				DSTROOT = /tmp/TiSafariDialog.dst;
+				DSTROOT = /tmp/TiSafaridialog.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TiSafariDialog_Prefix.pch;
+				GCC_PREFIX_HEADER = TiSafaridialog_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -280,7 +278,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = TiSafariDialog;
+				PRODUCT_NAME = TiSafaridialog;
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -294,12 +292,11 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DSTROOT = /tmp/TiSafariDialog.dst;
-				ENABLE_TESTABILITY = YES;
+				DSTROOT = /tmp/TiSafaridialog.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TiSafariDialog_Prefix.pch;
+				GCC_PREFIX_HEADER = TiSafaridialog_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -312,14 +309,13 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = TiSafariDialog;
+				PRODUCT_NAME = TiSafaridialog;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
@@ -334,11 +330,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LIBRARY = "libstdc++";
-				DSTROOT = /tmp/TiSafariDialog.dst;
+				DSTROOT = /tmp/TiSafaridialog.dst;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TiSafariDialog_Prefix.pch;
+				GCC_PREFIX_HEADER = TiSafaridialog_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_VERSION = "";
@@ -351,10 +347,10 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = TiSafariDialog;
+				PRODUCT_NAME = TiSafaridialog;
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";

@@ -70,6 +70,8 @@ def generate_doc(config):
 
 def compile_js(manifest,config):
 	js_file = os.path.join(cwd,'assets','ti.safaridialog.js')
+	if not os.path.exists(js_file):
+		js_file = os.path.join(cwd,'..','assets','ti.safaridialog.js')
 	if not os.path.exists(js_file): return
 
 	from compiler import Compiler
@@ -99,7 +101,7 @@ def compile_js(manifest,config):
 
 	from tools import splice_code
 
-	assets_router = os.path.join(cwd,'Classes','TiSafariDialogModuleAssets.m')
+	assets_router = os.path.join(cwd,'Classes','TiSafaridialogModuleAssets.m')
 	splice_code(assets_router, 'asset', root_asset_content)
 	splice_code(assets_router, 'resolve_asset', module_asset_content)
 

@@ -9,7 +9,7 @@
 #import "TiModule.h"
 #import <SafariServices/SafariServices.h>
 
-@interface TiSafariDialogModule : TiModule<SFSafariViewControllerDelegate>{
+@interface TiSafaridialogModule :TiModule<SFSafariViewControllerDelegate>{
 @private
     SFSafariViewController* _sfController;
     NSString* _url;

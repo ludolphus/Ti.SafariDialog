@@ -12,7 +12,7 @@
 #import "TiUtils.h"
 #import "TiApp.h"
 
-@implementation TiSafariDialogModule
+@implementation TiSafaridialogModule
 
 #pragma mark Internal
 
@@ -28,6 +28,7 @@
 	return @"ti.safaridialog";
 }
 
+#pragma mark Lifecycle
 #pragma mark Lifecycle
 
 -(void)startup
@@ -145,7 +146,7 @@
     if([args objectForKey:@"title"]){
         safari.title = [TiUtils stringValue:@"title" properties:args];
     }
-
+    
     if([args objectForKey:@"tintColor"]){
         TiColor *newColor = [TiUtils colorValue:@"tintColor" properties:args];
         UIColor *clr = [newColor _color];

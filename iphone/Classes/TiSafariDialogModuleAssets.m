@@ -5,12 +5,11 @@
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
-
-#import "TiSafariDialogModuleAssets.h"
+#import "TiSafaridialogModuleAssets.h"
 
 extern NSData* filterDataInRange(NSData* thedata, NSRange range);
 
-@implementation TiSafariDialogModuleAssets
+@implementation TiSafaridialogModuleAssets
 
 - (NSData*) moduleAsset
 {
