@@ -55,7 +55,11 @@
 
 -(BOOL)checkSupported
 {
+#if IS_XCODE_7
     return (NSClassFromString(@"SFSafariViewController") != nil);
+#else
+    return NO;
+#endif
 }
 
 -(void)teardown

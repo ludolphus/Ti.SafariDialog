@@ -9,8 +9,10 @@
 #import "TiModule.h"
 #if IS_XCODE_7
 #import <SafariServices/SafariServices.h>
-#endif
 @interface TiSafaridialogModule :TiModule<SFSafariViewControllerDelegate>{
+#else
+@interface TiSafaridialogModule :TiModule{
+#endif
 @private
     #if IS_XCODE_7
     SFSafariViewController* _sfController;
