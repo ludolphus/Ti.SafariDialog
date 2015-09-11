@@ -28,7 +28,7 @@
 		24DE9E1211C5FE74003F90F6 /* TiSafaridialogModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiSafaridialogModuleAssets.m */; };
 		AA747D9F0F9514B9006C5449 /* TiSafaridialog_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiSafaridialog_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		CAEDC01F1BA2963700D83952 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDC01E1BA2963700D83952 /* SafariServices.framework */; };
+		CAEDC01F1BA2963700D83952 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAEDC01E1BA2963700D83952 /* SafariServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
