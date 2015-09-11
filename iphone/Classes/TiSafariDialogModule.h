@@ -7,11 +7,14 @@
  */
 
 #import "TiModule.h"
+#if IS_XCODE_7
 #import <SafariServices/SafariServices.h>
-
+#endif
 @interface TiSafaridialogModule :TiModule<SFSafariViewControllerDelegate>{
 @private
+    #if IS_XCODE_7
     SFSafariViewController* _sfController;
+    #endif
     NSString* _url;
     BOOL _isOpen;
 }

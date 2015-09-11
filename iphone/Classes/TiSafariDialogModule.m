@@ -29,7 +29,6 @@
 }
 
 #pragma mark Lifecycle
-#pragma mark Lifecycle
 
 -(void)startup
 {
@@ -61,11 +60,12 @@
 
 -(void)teardown
 {
+#if IS_XCODE_7
     if(_sfController!=nil){
         _sfController.delegate = nil;
         _sfController = nil;
     }
-    
+#endif
     _isOpen = NO;
     
     if ([self _hasListeners:@"close"]){
@@ -78,6 +78,7 @@
     }
 }
 
+#if IS_XCODE_7
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
 {
     [[TiApp app] hideModalController:controller animated:YES];
@@ -93,6 +94,7 @@
     
     return _sfController;
 }
+#endif
 
 #pragma Public APIs
 
@@ -119,11 +121,13 @@
 -(void)close:(id)unused
 {
     ENSURE_UI_THREAD(close,unused);
-    
+ 
+#if IS_XCODE_7
     if(_sfController != nil){
         [[TiApp app] hideModalController:_sfController animated:YES];
         [self teardown];
     }
+#endif
     _isOpen = NO;
 }
 
@@ -141,6 +145,7 @@
     BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
     BOOL entersReaderIfAvailable = [TiUtils boolValue:@"entersReaderIfAvailable" properties:args def:YES];
     
+#if IS_XCODE_7
     SFSafariViewController* safari = [self sfController:_url withEntersReaderIfAvailable:entersReaderIfAvailable];
     
     if([args objectForKey:@"title"]){
@@ -154,7 +159,7 @@
     }
     
     [[TiApp app] showModalController:safari animated:animated];
-    
+#endif    
     _isOpen = YES;
     
     if ([self _hasListeners:@"open"]){
