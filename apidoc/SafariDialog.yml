@@ -1,7 +1,7 @@
 name: Modules.SafariDialog
 summary: Allows a Titanium application to use the iOS Safari ViewController to create an embedded browser.
 platforms: [iphone, ipad]
-since: "4.4.0"
+since: "5.1.0"
 extends: Titanium.Module
 description: |
     
@@ -11,8 +11,9 @@ description: |
 
     ### Requirements
 
-    The SafariDialog module is available with the Titanium SDK starting with Release 4.4.0.
-    This module only works with devices running iOS 9. 
+    The SafariDialog module is available with the Titanium SDK starting with Release 5.1.0.
+    This module only works with devices running iOS 9.
+    Please make sure you have at least Xcode 7 to build to the required sources.
 
 
     ### Getting Started
