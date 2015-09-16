@@ -8,14 +8,9 @@
 
 #import "TiModule.h"
 #import <SafariServices/SafariServices.h>
-<<<<<<< HEAD
-=======
 
->>>>>>> parent of 89b96eb... add Xcode 7 macros
 @interface TiSafaridialogModule :TiModule<SFSafariViewControllerDelegate>{
-#else
-@interface TiSafaridialogModule :TiModule{
-#endif
+
 @private
     SFSafariViewController* _sfController;
     NSString* _url;
