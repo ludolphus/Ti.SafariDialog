@@ -15,4 +15,4 @@ name: TiSafariDialog
 moduleid: ti.safaridialog
 guid: c2b0df2f-43e2-4811-aa9e-c0a91c158d33
 platform: iphone
-minsdk: 4.1.0.GA
+minsdk: 5.0.0.GA
