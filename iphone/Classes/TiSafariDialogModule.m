@@ -12,7 +12,7 @@
 #import "TiUtils.h"
 #import "TiApp.h"
 
-@implementation TiSafariDialogModule
+@implementation TiSafaridialogModule
 
 #pragma mark Internal
 
@@ -25,9 +25,10 @@
 // this is generated for your module, please do not change it
 -(NSString*)moduleId
 {
-	return @"Ti.SafariDialog";
+	return @"ti.safaridialog";
 }
 
+#pragma mark Lifecycle
 #pragma mark Lifecycle
 
 -(void)startup
@@ -55,7 +56,11 @@
 
 -(BOOL)checkSupported
 {
+#if IS_XCODE_7
     return (NSClassFromString(@"SFSafariViewController") != nil);
+#else
+    return NO;
+#endif
 }
 
 -(void)teardown
@@ -67,13 +72,13 @@
     
     _isOpen = NO;
     
-    if ([self _hasListeners:@"closed"]){
+    if ([self _hasListeners:@"close"]){
         NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                                NUMINT(YES),@"success",
                                _url,@"url",
                                nil
                                ];
-        [self fireEvent:@"closed" withObject:event];
+        [self fireEvent:@"close" withObject:event];
     }
 }
 
@@ -145,7 +150,7 @@
     if([args objectForKey:@"title"]){
         safari.title = [TiUtils stringValue:@"title" properties:args];
     }
-
+    
     if([args objectForKey:@"tintColor"]){
         TiColor *newColor = [TiUtils colorValue:@"tintColor" properties:args];
         UIColor *clr = [newColor _color];
@@ -156,13 +161,13 @@
     
     _isOpen = YES;
     
-    if ([self _hasListeners:@"opened"]){
+    if ([self _hasListeners:@"open"]){
         NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                                NUMINT(YES),@"success",
                                _url,@"url",
                                nil
                                ];
-        [self fireEvent:@"opened" withObject:event];
+        [self fireEvent:@"open" withObject:event];
     }
 }
 
