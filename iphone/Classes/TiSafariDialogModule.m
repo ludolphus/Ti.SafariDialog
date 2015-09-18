@@ -84,8 +84,9 @@
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
 {
-    [[TiApp app] hideModalController:controller animated:YES];
-    [self teardown];
+    if(_sfController != nil){
+        [self teardown];
+    }
 }
 
 -(SFSafariViewController*)sfController:(NSString*)url withEntersReaderIfAvailable:(BOOL)entersReaderIfAvailable
@@ -120,17 +121,6 @@
     return NUMBOOL([self checkSupported]);
 }
 
--(void)close:(id)unused
-{
-    ENSURE_UI_THREAD(close,unused);
-    
-    if(_sfController != nil){
-        [[TiApp app] hideModalController:_sfController animated:YES];
-        [self teardown];
-    }
-    _isOpen = NO;
-}
-
 -(void)open:(id)args
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
@@ -157,6 +147,7 @@
         safari.view.tintColor = clr;
     }
     
+    [self retain];
     [[TiApp app] showModalController:safari animated:animated];
     
     _isOpen = YES;
