@@ -84,9 +84,7 @@
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
 {
-    if(_sfController != nil){
-        [self teardown];
-    }
+    [self teardown];
 }
 
 -(SFSafariViewController*)sfController:(NSString*)url withEntersReaderIfAvailable:(BOOL)entersReaderIfAvailable
@@ -119,6 +117,17 @@
 -(NSNumber*)isSupported:(id)unused
 {
     return NUMBOOL([self checkSupported]);
+}
+
+-(void)close:(id)unused
+{
+    ENSURE_UI_THREAD(close,unused);
+    
+    if(_sfController != nil){
+        [[TiApp app] hideModalController:_sfController animated:YES];
+        [self teardown];
+    }
+    _isOpen = NO;
 }
 
 -(void)open:(id)args
