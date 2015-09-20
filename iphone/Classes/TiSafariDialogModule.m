@@ -84,7 +84,6 @@
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
 {
-    [[TiApp app] hideModalController:controller animated:YES];
     [self teardown];
 }
 
@@ -157,6 +156,7 @@
         safari.view.tintColor = clr;
     }
     
+    [self retain];
     [[TiApp app] showModalController:safari animated:animated];
     
     _isOpen = YES;
