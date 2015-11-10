@@ -63,11 +63,7 @@
 
 -(BOOL)checkSupported
 {
-#if IS_XCODE_7
-    return (NSClassFromString(@"SFSafariViewController") != nil);
-#else
-    return NO;
-#endif
+    return [TiUtils isIOS9OrGreater];
 }
 
 -(void)teardown
