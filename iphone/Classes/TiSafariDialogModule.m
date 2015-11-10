@@ -44,6 +44,13 @@
 
 #pragma mark Cleanup
 
+-(void)dealloc
+{
+    RELEASE_TO_NIL(_sfController);
+    RELEASE_TO_NIL(_url);
+    
+    [super dealloc];
+}
 
 #pragma mark Internal Memory Management
 
@@ -56,11 +63,7 @@
 
 -(BOOL)checkSupported
 {
-#if IS_XCODE_7
-    return (NSClassFromString(@"SFSafariViewController") != nil);
-#else
-    return NO;
-#endif
+    return [TiUtils isIOS9OrGreater];
 }
 
 -(void)teardown
@@ -75,7 +78,7 @@
     if ([self _hasListeners:@"close"]){
         NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                                NUMINT(YES),@"success",
-                               _url,@"url",
+                               [_url stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding],@"url",
                                nil
                                ];
         [self fireEvent:@"close" withObject:event];
@@ -140,7 +143,7 @@
         return;
     }
     
-    _url = [TiUtils stringValue:@"url" properties:args];
+    _url = [[TiUtils stringValue:@"url" properties:args] retain];
     BOOL animated = [TiUtils boolValue:@"animated" properties:args def:YES];
     BOOL entersReaderIfAvailable = [TiUtils boolValue:@"entersReaderIfAvailable" properties:args def:YES];
     
