@@ -35,13 +35,13 @@ description: |
 
     The `dialog` variable is a reference to the module. Make API calls using this reference:
 
-       if(dialog.isSupported()){
+        if(dialog.isSupported()){
           dialog.open({
-              url:"http://appcelerator.com",
-              title:"Hello World",
-              tintColor:"red"
+            url:"http://appcelerator.com",
+            title:"Hello World",
+            tintColor:"red"
           });
-       }
+        }
 
     ### Sample Application
 
