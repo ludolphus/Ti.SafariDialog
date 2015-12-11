@@ -53,11 +53,14 @@ properties:
     type: Boolean
     osver: {ios: {min: "9.0"}}
     platforms: [iphone,ipad]
+    permission: read-only
+
   - name: opened
     summary: Indicates is SafariDialog is open.
     type: Boolean
     osver: {ios: {min: "9.0"}}
     platforms: [iphone,ipad] 
+    permission: read-only
 
 methods:
   - name: isOpen
